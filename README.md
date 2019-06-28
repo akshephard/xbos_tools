@@ -65,14 +65,15 @@ The name for the message should be the same as the first part of the message nam
 
 ### Example:
 In the iot.proto example above,
-Weather_Current_State current_weather = 9;eather_Current_State current_weather = 9; 
-
+```
+Weather_Current_State current_weather = 9; 
 Weather_Current_State would be the correct message name!
-
+```
 ### Example:
+```
 python plugin_gen.py parker_full.csv ParkerState parker_plugin.go
 python plugin_gen.py wattnode.csv WattnodeState wattnode_plugin.go
-
+```
 When figuring out the message name for the ingester plugin look at iot.proto
 Field names may also change, I adapted the code to work names with underscores, but if it fails because of field names look at the device drivers pb.go in ~/xboswave/proto/
 
