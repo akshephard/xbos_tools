@@ -2,19 +2,19 @@
 
 These tools will use a formatted csv file to generate a proto file, xbos message, as well as a plugin for simple devices.
 
-Generate entity setup all permissions:
+#Generate entity setup all permissions:
 
 For wattnode
 (Enter nothing for usage)
 ../setup_entity.sh wattnode $NAMESPACE_HASH $NAMESPACE
 
 
-Generate proto file with message name
+#Generate proto file with message name
 python proto_gen.py dark_sky.csv Dark_Sky_State dark_sky.proto
 
 python proto_gen.py .csv Dark_Sky_State dark_sky.proto
 
-Generate Proto files for Dark Sky weather current and predictive
+#Generate Proto files for Dark Sky weather current and predictive
 python proto_gen.py weather_current.csv Weather_Current_State weather_current.proto
 python proto_gen.py weather_prediction.csv Weather_Prediction_State weather_prediction.proto
 
@@ -61,10 +61,10 @@ Make all generated files
 make proto
 make proto-py
 
-Generate plugin for ingester
+#Generate plugin for ingester
 The name for the message should be the same as the first part of the message name 
 
-Example:
+#Example:
 In the iot.proto example above,
 Weather_Current_State current_weather = 9;eather_Current_State current_weather = 9; 
 
