@@ -4,29 +4,32 @@ These tools will use a formatted csv file to generate a proto file, xbos message
 
 ## Generate entity setup all permissions:
 
-For wattnode
-(Enter nothing for usage)
+For wattnode (Enter nothing for usage)
+```
 ../setup_entity.sh wattnode $NAMESPACE_HASH $NAMESPACE
-
+```
 
 ## Generate proto file with message name
+```
 python proto_gen.py dark_sky.csv Dark_Sky_State dark_sky.proto
-
 python proto_gen.py .csv Dark_Sky_State dark_sky.proto
+```
 
 ## Generate Proto files for Dark Sky weather current and predictive
+```
 python proto_gen.py weather_current.csv Weather_Current_State weather_current.proto
 python proto_gen.py weather_prediction.csv Weather_Prediction_State weather_prediction.proto
-
+```
 
 
 ## Generate message section for parker,weather_current,weather_prediction,wattnode
 
+```
 python message_gen.py weather_current.csv > weather_current.message
 python message_gen.py weather_prediction.csv > weather_prediction.message
 python message_gen.py parker_full.csv > parker_full.message 
 python message_gen.py wattnode.csv > wattnode.message 
-
+```
 
 
 After making the proto file and message components of the driver, the message needs to be added in iot.proto in  XBOSIoTDeviceState so it will become a field
@@ -53,9 +56,10 @@ message XBOSIoTDeviceState {
 }
 ```
 ## Make all generated files
+```
 make proto
 make proto-py
-
+```
 ## Generate plugin for ingester
 The name for the message should be the same as the first part of the message name 
 
