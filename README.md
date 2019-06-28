@@ -2,7 +2,7 @@
 
 These tools will use a formatted csv file to generate a proto file, xbos message, as well as a plugin for simple devices.
 
-#Generate entity setup all permissions:
+## Generate entity setup all permissions:
 
 For wattnode
 (Enter nothing for usage)
